@@ -79,7 +79,7 @@ function App() {
   }
 
   return (
-    <div className="container" aria-label="Todo List Container">
+    <main className="container" aria-label="Todo List Container">
       <h1 id="todo-heading">TODO LIST</h1>
       <TaskInput
         input={input}
@@ -103,7 +103,7 @@ function App() {
           />
         ))}
       </ul>
-    </div>
+    </main>
   );
 }
 
