@@ -50,7 +50,9 @@ function TaskItem({
         </>
       ) : (
         <>
-          <span className={`content ${task.done ? "done" : ""}`}>{task.text}</span>
+          <span className={`content ${task.done ? "done" : ""}`}>
+            {task.text}
+          </span>
           <button
             className="done-btn btn"
             onClick={() => toggleDone(task.id)}
