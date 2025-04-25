@@ -101,8 +101,12 @@ body {
   border-radius: 0.25rem;
 }
 
-.task-item span {
+.content {
   flex: 1;
+  max-width: 75%;
+  max-height: 20rem;
+  overflow: scroll;
+  overflow-wrap: break-word;
   font-size: var(--font-size-base);
 }
 
@@ -147,7 +151,7 @@ body {
 }
 
 .task-item .btn.done-btn:hover {
-  background-color: #1e9c5a;
+  filter: brightness(120%);
 }
 
 .task-item .btn.edit-btn {
@@ -156,7 +160,7 @@ body {
 }
 
 .task-item .btn.edit-btn:hover {
-  background-color: #e5b700;
+  filter: brightness(120%);
 }
 
 .task-item .btn.delete-btn {
@@ -164,7 +168,7 @@ body {
 }
 
 .task-item .btn.delete-btn:hover {
-  background-color: #c1121f;
+  filter: brightness(120%);
 }
 
 .input-group input:focus,

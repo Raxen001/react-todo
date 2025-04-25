@@ -2,6 +2,7 @@ import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import css from "@eslint/css";
 
 export default [
   { ignores: ['dist'] },
@@ -30,4 +31,15 @@ export default [
       ],
     },
   },
+    // lint css files
+    {
+        files: ["**/*.css"],
+        plugins: {
+            css,
+        },
+        language: "css/css",
+        rules: {
+            "css/no-duplicate-imports": "error",
+        },
+    },
 ]

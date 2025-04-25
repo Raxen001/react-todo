@@ -28,7 +28,7 @@ function TaskItem({
 
   return (
     <li
-      className={`task-item ${isEditing ? "edit" : ""}`}
+      className={`task-item${isEditing ? " edit" : ""}`}
       aria-label={`Task item: ${task.text}`}
     >
       {isEditing ? (
@@ -45,12 +45,12 @@ function TaskItem({
             onClick={() => saveEdit(task.id)}
             aria-label="Save edited task"
           >
-            <FontAwesomeIcon icon={faSave} /> Save
+            <FontAwesomeIcon icon={faSave} />
           </button>
         </>
       ) : (
         <>
-          <span className={task.done ? "done" : ""}>{task.text}</span>
+          <span className={`content ${task.done ? "done" : ""}`}>{task.text}</span>
           <button
             className="done-btn btn"
             onClick={() => toggleDone(task.id)}
@@ -59,21 +59,21 @@ function TaskItem({
             }
           >
             <FontAwesomeIcon icon={task.done ? faUndo : faCheck} />{" "}
-            {task.done ? "Undo" : "Done"}
+            {task.done ? "" : ""}
           </button>
           <button
             className="edit-btn btn"
             onClick={() => startEditing(task.id, task.text)}
             aria-label="Edit task"
           >
-            <FontAwesomeIcon icon={faEdit} /> Edit
+            <FontAwesomeIcon icon={faEdit} />
           </button>
           <button
             className="delete-btn btn"
             onClick={() => deleteTask(task.id)}
             aria-label="Delete task"
           >
-            <FontAwesomeIcon icon={faTrash} /> Delete
+            <FontAwesomeIcon icon={faTrash} />
           </button>
         </>
       )}
