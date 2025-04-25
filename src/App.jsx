@@ -88,20 +88,25 @@ function App() {
         ariaLabel="Task input field"
       />
       <ul className="task-list" aria-labelledby="todo-heading">
-        {tasks.map((task) => (
-          <TaskItem
-            key={task.id}
-            task={task}
-            editId={editId}
-            editInput={editInput}
-            setEditInput={setEditInput}
-            startEditing={startEditing}
-            saveEdit={saveEdit}
-            toggleDone={toggleDone}
-            deleteTask={deleteTask}
-            ariaLabel={`Task: ${task.text}`}
-          />
-        ))}
+        {[...tasks]
+          .sort((a, b) => {
+            if (a.done === b.done) return 0;
+            return a.done ? 1 : -1;
+          })
+          .map((task) => (
+            <TaskItem
+              key={task.id}
+              task={task}
+              editId={editId}
+              editInput={editInput}
+              setEditInput={setEditInput}
+              startEditing={startEditing}
+              saveEdit={saveEdit}
+              toggleDone={toggleDone}
+              deleteTask={deleteTask}
+              ariaLabel={`Task: ${task.text}`}
+            />
+          ))}
       </ul>
     </main>
   );
