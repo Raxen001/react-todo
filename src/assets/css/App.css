@@ -1,0 +1,175 @@
+:root {
+  --font-size-sm: 0.875rem;   
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+
+  --text-color: #2e3436;
+  --text-muted: #5c6166;
+  --text-inverted: #ffffff;
+
+  --primary-bg: #ffffff;
+  --input-bg: #f6f5f4;
+  --task-bg: #f6f5f4;
+  --border-color: #d3d7cf;
+
+  --primary-accent: #3584e4;
+  --primary-accent-hover: #1c71d8;
+  --danger: #e01b24;
+  --success: #33d17a;
+
+  --gray-light: #f6f5f4;
+  --primary-border: #d3d7cf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #eeeeec;
+    --text-muted: #9ea1a2;
+    --text-inverted: #010101;
+
+    --primary-bg: #1a1a1a;
+    --input-bg: #0a0a0a;
+    --task-bg: #1c1e1f;
+    --border-color: #555753;
+
+    --primary-accent: #62a0ea;
+    --primary-accent-hover: #5294e2;
+    --danger: #f66151;
+    --success: #26a269;
+
+    --gray-light: #1c1e1f;
+    --primary-border: #444;
+  }
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  font-family: "Cantarell", sans-serif;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-group .main-input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: var(--font-size-base);
+  border: 0.0625rem solid var(--primary-border); /* 1px */
+  border-radius: 0.25rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.input-group .main-btn {
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-base);
+  background-color: var(--primary-accent);
+  color: var(--text-inverted);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.input-group .main-btn:hover {
+  background-color: var(--primary-accent-hover);
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background-color: var(--task-bg);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.task-item span {
+  flex: 1;
+  font-size: var(--font-size-base);
+}
+
+.task-item .done {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.btn {
+  padding: 0.3rem 0.6rem;
+  font-size: var(--font-size-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: none;
+  background-color: var(--primary-accent);
+  color: var(--text-inverted);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.task-item .btn:hover {
+  background-color: var(--primary-accent-hover);
+}
+
+.task-item.edit {
+  background-color: var(--gray-light);
+  border-left: 0.25rem solid var(--primary-accent);
+  border-radius: 0;
+}
+
+.task-item.edit input {
+  flex: 1;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 0.0625rem solid var(--primary-border);
+  padding: 0.4rem;
+}
+
+.task-item .btn.done-btn {
+  background-color: var(--success);
+}
+
+.task-item .btn.done-btn:hover {
+  background-color: #1e9c5a;
+}
+
+.task-item .btn.edit-btn {
+  background-color: #f6c915;
+  color: var(--text-inverted);
+}
+
+.task-item .btn.edit-btn:hover {
+  background-color: #e5b700;
+}
+
+.task-item .btn.delete-btn {
+  background-color: var(--danger);
+}
+
+.task-item .btn.delete-btn:hover {
+  background-color: #c1121f;
+}
+
+.input-group input:focus,
+.task-item.edit input:focus {
+  outline: none;
+  border-color: var(--gray-light);
+  box-shadow: 0 0 0 0.125rem var(--primary-border);
+}
